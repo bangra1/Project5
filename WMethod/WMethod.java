@@ -383,26 +383,17 @@ public class WMethod{
      Vector <String> tests=generateTests(transitionCover, w); // Generate tests.
      Utilities.printAllTestCases(tests); // Print tests.
      
-     System.out.print("Enter string for test ");
-	    String input=fileSource.nextLine();
-	    
-	    String val = "";
-   	 for (int index = 0; index < input.length(); index++) {
-   	          val += (input.charAt(index)+" ");
-   	    }
-
-	    Utilities.runFSM(FSM, 1,val," ");
-	    
-	  
-   	String testing = val; 
-    Pattern pattern = Pattern.compile("0 0 7");
-    Matcher matcher = pattern.matcher(testing);
-    if (matcher.find()) {
-        System.out.println("Yes Found"); 
-    } else {
-        System.out.println("Match not found");
-    }
-	  	   
+     for(int i=0; i<= tests.size()-1;i++){
+    	 
+     	String input =tests.get(i);
+     	String val = "";
+     	 for (int index = 0; index < input.length(); index++) {
+     	          val += (input.charAt(index)+" ");
+     	 }
+     	 
+     	 
+          Utilities.runFSM(FSM, 1,val," ");
+     }  	   
      
    }// End of main()
    
